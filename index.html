@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>APOD Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80%;
+    }
+
+    p {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <h1>Astronomy Picture of the Day</h1>
+  <!-- Создание элемента div для отображения изображения и пояснения -->
+  <div id="apod"></div>
+  <!-- Добавление тега script для загрузки APOD API и обновления элемента div -->
+  <script>
+    // Определение функцию для извлечения данных APOD из API
+    function fetchAPOD() {
+      // Получение текущей даты в формате ГГГГ-ММ-ДД
+      let today = new Date().toISOString().slice(0, 10);
+      // Определение URL API с указанием даты и ключевых параметров
+      let apiURL = "https://api.nasa.gov/planetary/apod?date=" + today + "&api_key=DEMO_KEY";
+      // Использование функций fetch для получения данных из API
+      fetch(apiURL)
+        .then(response => response.json()) // Преобразование ответа в JSON формат
+        .then(data => { // Использование данных для обновления элемента div
+          // Получение элемента div по его идентификатору
+          let apodDiv = document.getElementById("apod");
+          // Создание элемента изображения и определение его атрибутов source и alt
+          let image = document.createElement("img");
+          image.src = data.url;
+          image.alt = data.title;
+          // Создание элемента абзац и установка для его текстового содержимого
+          let explanation = document.createElement("p");
+          explanation.textContent = data.explanation;
+          // Добавление изображения и пояснение к элементу div
+          apodDiv.appendChild(image);
+          apodDiv.appendChild(explanation);
+        })
+        .catch(error => { // Обработка любых ошибок
+          console.error(error); // Определение ошибки в консоли
+          // Создание элемента paragraph и установка для его текстового содержимого значение сообщения об ошибке
+          let errorMessage = document.createElement("p");
+          errorMessage.textContent = "Sorry, something went wrong. Please try again later.";
+          // Добавление сообщение об ошибке к элементу div
+          apodDiv.appendChild(errorMessage);
+        });
+    }
+
+    // Вызов функции fetchAPOD при загрузке страницы
+    window.onload = fetchAPOD;
+  </script>
+</body>
+</html>
