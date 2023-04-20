@@ -1,6 +1,6 @@
 const assert = require('assert'); // Подключаем модуль assert для проверки утверждений
 const request = require('supertest'); // Подключаем модуль supertest для тестирования HTTP-запросов
-const server = require('../index'); // Подключаем веб-сайта
+const server = require('../index'); // Подключаем веб-сайт
 
 // Описываем набор тестов с помощью функции describe
 describe('GET /', function() {
