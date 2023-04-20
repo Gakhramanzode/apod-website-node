@@ -1,11 +1,19 @@
 {
-  "name": "js-app",
+  "name": "apod-website-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Node.js app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Asker Kakhramanov",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gakhramanzode/apod-website-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gakhramanzode/apod-website-node/issues"
+  },
+  "homepage": "https://github.com/Gakhramanzode/apod-website-node#readme"
 }
