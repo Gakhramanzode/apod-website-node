@@ -4,7 +4,7 @@
   "description": "My Node.js app",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "mocha"
   },
   "author": "Asker Kakhramanov",
   "license": "ISC",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gakhramanzode/apod-website-node/issues"
   },
-  "homepage": "https://github.com/Gakhramanzode/apod-website-node#readme"
+  "homepage": "https://github.com/Gakhramanzode/apod-website-node#readme",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
 }
