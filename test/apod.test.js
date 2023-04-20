@@ -10,7 +10,7 @@ describe('Server', function() {
   // Определяем один тест
   it('should start and respond to requests', function(done) {
     // Отправляем GET-запрос на сервер
-    http.get('http://localhost:55360', function(response) {
+    http.get('http://localhost:80', function(response) {
       // Проверяем статус ответа
       expect(response.statusCode).to.equal(200);
       // Завершаем тест
