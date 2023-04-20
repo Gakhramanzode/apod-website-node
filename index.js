@@ -4,7 +4,7 @@ const fs = require("fs");
 // Импорт модуль http
 const http = require("http");
 // Определение порта для прослушивания
-const port = 80;
+const port = 60937;
 // Создание объект сервера
 const server = http.createServer((req, res) => {
   // Проверка, относится ли запрос к корневому пути
