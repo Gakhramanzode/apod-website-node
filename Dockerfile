@@ -6,7 +6,7 @@ WORKDIR /app
 COPY index.js /app/
 # Копирование HTML-файла в рабочий каталог
 COPY index.html /app/
-# Открытие 80 порта для HTTP-запросов
-EXPOSE 80
+# Открытие 60937 порта для HTTP-запросов
+EXPOSE 60937
 # Старт node.js сервера
 CMD ["node", "index.js"]
