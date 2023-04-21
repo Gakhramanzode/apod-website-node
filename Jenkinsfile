@@ -14,6 +14,11 @@ node {
             sh 'npm test'
         }
     }
+    stage('Check Docker') {
+        steps {
+            sh 'docker version'
+        }
+    }
     stage('Docker build') {
         script {
             def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}")
