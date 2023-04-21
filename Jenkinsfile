@@ -15,13 +15,10 @@ node {
         }
     }
     stage('Docker build') {
-        // Здесь указывается код для сборки приложения в Docker Image
-        steps {
-            script {
-                // Создаем новый образ из Dockerfile в папке docker
-                def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}")
-            }
+        script {
+            def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}")
         }
+    }
     }
     stage('Deploy') {
         // Здесь указывается код для отправки приложения в Docker registry
