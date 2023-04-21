@@ -19,7 +19,6 @@ node {
             def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}")
         }
     }
-    }
     stage('Deploy') {
         // Здесь указывается код для отправки приложения в Docker registry
     }
