@@ -35,15 +35,15 @@ pipeline {
             }
         }
         stage('Docker push') {
-            steps {
-                // Отправляем докер образ в репозиторий
-                // script {
-                //     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-                //         app.push("${env.BRANCH_NAME}")
-                //         app.push("latest")
-                //     }
-                // }
-            }
+            // steps {
+            //     // Отправляем докер образ в репозиторий
+            //     script {
+            //         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            //             app.push("${env.BRANCH_NAME}")
+            //             app.push("latest")
+            //         }
+            //     }
+            // }
         }
     }
 }
