@@ -16,11 +16,9 @@ node {
     }
     stage('Docker build') {
         // Здесь указывается код для сборки приложения в Docker Image
-        steps {
-            script {
-                // Создаем новый образ из Dockerfile в корне репозитория
-                def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}", ".")
-            }
+        script {
+            // Создаем новый образ из Dockerfile в корне репозитория
+            def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}", ".")
         }
     }
     stage('Deploy') {
