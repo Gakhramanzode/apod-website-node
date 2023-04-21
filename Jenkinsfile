@@ -15,9 +15,7 @@ node {
         }
     }
     stage('Check Docker') {
-        steps {
-            sh 'docker version'
-        }
+        sh 'docker version'
     }
     stage('Docker build') {
         script {
