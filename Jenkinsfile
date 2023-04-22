@@ -15,11 +15,17 @@ node {
         }
     }
     stage('Docker build') {
+        // Здесь указывается код для сборки приложения в Docker Image
         script {
-            def app = docker.build("apod-website-node:1.0.${env.BUILD_ID}")
+            def app = docker.build("gakhramanzode/apod-website-node:1.0.${env.BUILD_ID}")
         }
     }
     stage('Deploy') {
         // Здесь указывается код для отправки приложения в Docker registry
+        script {
+            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                app.push()
+            }
+        }
     }
 }
