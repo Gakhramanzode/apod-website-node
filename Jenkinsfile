@@ -18,7 +18,7 @@ node {
     stage('Docker build') {
         // Здесь указывается код для сборки приложения в Docker Image
         script {
-            def app = docker.build("gakhramanzode/apod-website-node:1.0.${env.BUILD_ID}")
+            app = docker.build("gakhramanzode/apod-website-node:1.0.${env.BUILD_ID}")
         }
     }
     stage('Deploy') {
