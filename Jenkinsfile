@@ -1,4 +1,5 @@
 node {
+    def app
     stage('Checkout') {
         git url: 'https://github.com/Gakhramanzode/apod-website-node.git'
     }
